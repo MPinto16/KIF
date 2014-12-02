@@ -71,7 +71,7 @@ static inline void Swizzle(Class c, SEL orig, SEL new)
     Swizzle([XCTestSuite class], @selector(_recordUnexpectedFailureForTestRun:description:exception:), @selector(KIF_recordUnexpectedFailureForTestRun:description:exception:));
 }
 
-- (void)KIF_recordUnexpectedFailureForTestRun:(XCTestSuiteRun *)arg1 description:(id)arg2 exception:(NSException *)arg3
+- (void)KIF_recordUnexpectedFailureForTestRun:(XCTestCase *)arg1 description:(id)arg2 exception:(NSException *)arg3
 {
     if (![[arg3 name] isEqualToString:@"KIFFailureException"]) {
         [self KIF_recordUnexpectedFailureForTestRun:arg1 description:arg2 exception:arg3];
